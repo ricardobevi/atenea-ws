@@ -14,11 +14,15 @@
 	</properties>
 
 	<dependencies>
+		
+		<!-- Neo4J DEPENDENCIES  -->
+		
 		<dependency>
 			<groupId>test</groupId>
 			<artifactId>neo4j</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
+		
 		<!-- SPRING DEPENDENCIES -->
 		<dependency>
 			<groupId>org.springframework</groupId>

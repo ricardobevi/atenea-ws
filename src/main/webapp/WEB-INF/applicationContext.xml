@@ -15,7 +15,10 @@
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
     
- 
+ 	<!-- 
+ 	Las siguientes lineas indican quien implementa al webservice que va a exponerse  
+ 	y en que ruta se expone el webservice
+ 	-->
     <bean id="atenea" class="org.squadra.atenea.webservice.impl.AteneaWsImpl" />
     <jaxws:endpoint id="ateneaws" implementor="#atenea" address="/atenea" />
     

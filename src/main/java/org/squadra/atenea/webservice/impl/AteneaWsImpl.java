@@ -7,8 +7,16 @@ import org.squadra.atenea.webservice.AteneaWs;
 import test.ServerTest;
 
 
+/**
+ * 
+ * Implementacion de AteneaWs
+ * 
+ * @author tempuses
+ *
+ */
 @WebService(endpointInterface="org.squadra.atenea.webservice.AteneaWs")
 public class AteneaWsImpl implements AteneaWs {
+
 
 	@Override
 	public String dialog(String message) {

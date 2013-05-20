@@ -5,6 +5,14 @@ import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
 import org.mortbay.jetty.webapp.WebAppContext;
 
+/**
+ * 
+ * Clase que inicia el servidor web Jetty para iniciar el webservice 
+ * y exponer los metodos de la clase AteneaWs
+ * 
+ * @author tempuses
+ *
+ */
 public class ServerWeb {
 	/*
 	 * protected Server() throws Exception {
