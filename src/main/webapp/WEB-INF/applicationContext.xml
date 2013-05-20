@@ -15,11 +15,8 @@
     <import resource="classpath:META-INF/cxf/cxf-extension-soap.xml" />
     <import resource="classpath:META-INF/cxf/cxf-servlet.xml" />
     
-<!--     <import resource="classpath:/cxf.xml" /> -->
-<!--     <import resource="classpath:/cxf-extension-soap.xml" /> -->
-<!--     <import resource="classpath:/cxf-servlet.xml" /> -->
-    
-    <bean id="hola" class="com.spring.webservices.taller1.service.impl.HolaMundoServiceImpl" />
-    <jaxws:endpoint id="holamundo" implementor="#hola" address="/holamundoservice" />
+ 
+    <bean id="atenea" class="org.squadra.atenea.webservice.impl.AteneaWsImpl" />
+    <jaxws:endpoint id="ateneaws" implementor="#atenea" address="/atenea" />
     
 </beans>    
