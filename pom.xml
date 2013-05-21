@@ -18,8 +18,8 @@
 		<!-- Neo4J DEPENDENCIES  -->
 		
 		<dependency>
-			<groupId>test</groupId>
-			<artifactId>neo4j</artifactId>
+			<groupId>org.scuadra.atenea</groupId>
+			<artifactId>AteneaServer</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		

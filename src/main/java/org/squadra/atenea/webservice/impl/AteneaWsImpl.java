@@ -2,9 +2,9 @@ package org.squadra.atenea.webservice.impl;
 
 import javax.jws.WebService;
 
+import org.atenea.aiengineaccess.AIEngineAccessFacade;
 import org.squadra.atenea.webservice.AteneaWs;
 
-import test.ServerTest;
 
 
 /**
@@ -21,7 +21,7 @@ public class AteneaWsImpl implements AteneaWs {
 	@Override
 	public String dialog(String message) {
 		
-		ServerTest server = new ServerTest();
+		AIEngineAccessFacade server = new AIEngineAccessFacade();
 		
 		//System.out.println( message );
 		
