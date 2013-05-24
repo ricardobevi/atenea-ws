@@ -1,5 +1,8 @@
 package org.squadra.atenea.webservice;
 
+import java.net.URL;
+import java.security.ProtectionDomain;
+
 import org.mortbay.jetty.Connector;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
@@ -27,7 +30,12 @@ public class ServerWeb {
 		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
 		bb.setContextPath("/AteneaWs");
-		bb.setWar("src/main/webapp");
+
+		ProtectionDomain domain = ServerWeb.class.getProtectionDomain();
+		URL location = domain.getCodeSource().getLocation();
+		bb.setDescriptor(location.toExternalForm() + "/WEB-INF/web.xml");
+		
+		bb.setWar(location.toExternalForm());
 
 		server.addHandler(bb);
 
