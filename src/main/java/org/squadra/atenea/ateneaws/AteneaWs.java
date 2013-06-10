@@ -1,4 +1,4 @@
-package org.squadra.atenea.webservice;
+package org.squadra.atenea.ateneaws;
 
 import javax.jws.WebParam;
 import javax.jws.WebService;

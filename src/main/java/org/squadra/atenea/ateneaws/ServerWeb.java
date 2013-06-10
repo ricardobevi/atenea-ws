@@ -1,4 +1,4 @@
-package org.squadra.atenea.webservice;
+package org.squadra.atenea.ateneaws;
 
 //import java.net.URL;
 //import java.security.ProtectionDomain;

@@ -1,9 +1,9 @@
-package org.squadra.atenea.webservice.impl;
+package org.squadra.atenea.ateneaws.impl;
 
 import javax.jws.WebService;
 
 import org.atenea.aiengineaccess.AIEngineAccessFacade;
-import org.squadra.atenea.webservice.AteneaWs;
+import org.squadra.atenea.ateneaws.AteneaWs;
 
 
 
