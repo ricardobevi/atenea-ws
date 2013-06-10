@@ -24,7 +24,7 @@ public class ServerWeb {
 		// Set some timeout options to make debugging easier.
 		connector.setMaxIdleTime(1000 * 60 * 60);
 		connector.setSoLingerTime(-1);
-		connector.setPort(8888);
+		connector.setPort(20002);
 		server.setConnectors(new Connector[] { connector });
 
 		WebAppContext bb = new WebAppContext();
