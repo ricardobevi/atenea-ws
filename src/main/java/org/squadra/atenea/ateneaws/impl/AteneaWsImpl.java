@@ -2,9 +2,8 @@ package org.squadra.atenea.ateneaws.impl;
 
 import javax.jws.WebService;
 
-import org.atenea.aiengineaccess.AIEngineAccessFacade;
 import org.squadra.atenea.ateneaws.AteneaWs;
-
+import org.squadra.atenea.aiengineaccess.AIEngineAccessFacade;
 
 
 /**
@@ -14,7 +13,7 @@ import org.squadra.atenea.ateneaws.AteneaWs;
  * @author tempuses
  *
  */
-@WebService(endpointInterface="org.squadra.atenea.webservice.AteneaWs")
+@WebService(endpointInterface="org.squadra.atenea.ateneaws.AteneaWs")
 public class AteneaWsImpl implements AteneaWs {
 
 

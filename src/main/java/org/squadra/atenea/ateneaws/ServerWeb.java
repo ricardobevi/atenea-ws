@@ -19,8 +19,40 @@ import org.mortbay.jetty.webapp.WebAppContext;
 public class ServerWeb {
 	
 	public static void main(String args[]) throws Exception {
-		Server server = new Server();
+		
+			Server server = new Server();
+			SocketConnector connector = new SocketConnector();
+			// Set some timeout options to make debugging easier.
+			connector.setMaxIdleTime(1000 * 60 * 60);
+			connector.setSoLingerTime(-1);
+			connector.setPort(20002);
+			server.setConnectors(new Connector[] { connector });
+
+			WebAppContext bb = new WebAppContext();
+			bb.setServer(server);
+			bb.setContextPath("/AteneaWs");
+			bb.setWar("src/main/webapp");
+
+			server.addHandler(bb);
+
+			try {
+				System.out
+						.println(">>> STARTING EMBEDDED JETTY SERVER, PRESS ANY KEY TO STOP");
+				server.start();
+				while (System.in.available() == 0) {
+					Thread.sleep(5000);
+				}
+				server.stop();
+				server.join();
+			} catch (Exception e) {
+				e.printStackTrace();
+				System.exit(100);
+			}	
+		
+		
+	/*	Server server = new Server();
 		SocketConnector connector = new SocketConnector();
+		
 		// Set some timeout options to make debugging easier.
 		connector.setMaxIdleTime(1000 * 60 * 60);
 		connector.setSoLingerTime(-1);
@@ -30,6 +62,7 @@ public class ServerWeb {
 		WebAppContext bb = new WebAppContext();
 		bb.setServer(server);
 		bb.setContextPath("/AteneaWs");
+		
 		/*
 		ProtectionDomain domain = ServerWeb.class.getProtectionDomain();
 
@@ -38,7 +71,7 @@ public class ServerWeb {
 		bb.setDescriptor(location.toExternalForm() + "/WEB-INF/web.xml");
 		
 		bb.setWar(location.toExternalForm());
-		 */
+		 
 		
 		bb.setWar("src/main/webapp");
 		
@@ -57,6 +90,10 @@ public class ServerWeb {
 			e.printStackTrace();
 			System.exit(100);
 		}
+		*/
+		
+		
+
 	}
 
 }

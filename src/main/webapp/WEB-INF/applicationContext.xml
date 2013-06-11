@@ -19,7 +19,7 @@
  	Las siguientes lineas indican quien implementa al webservice que va a exponerse  
  	y en que ruta se expone el webservice
  	-->
-    <bean id="atenea" class="org.squadra.atenea.webservice.impl.AteneaWsImpl" />
+    <bean id="atenea" class="org.squadra.atenea.ateneaws.impl.AteneaWsImpl" />
     <jaxws:endpoint id="ateneaws" implementor="#atenea" address="/atenea" />
     
 </beans>    
