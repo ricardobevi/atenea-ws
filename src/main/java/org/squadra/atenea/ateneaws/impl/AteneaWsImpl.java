@@ -16,13 +16,14 @@ import org.squadra.atenea.aiengineaccess.AIEngineAccessFacade;
 @WebService(endpointInterface="org.squadra.atenea.ateneaws.AteneaWs")
 public class AteneaWsImpl implements AteneaWs {
 
+	AIEngineAccessFacade server;
+	
+	public AteneaWsImpl(){
+		this.server = new AIEngineAccessFacade();
+	}
 
 	@Override
 	public String dialog(String message) {
-		
-		AIEngineAccessFacade server = new AIEngineAccessFacade();
-		
-		//System.out.println( message );
 		
 		if ( message != null ){
 			return server.excecute(message);
