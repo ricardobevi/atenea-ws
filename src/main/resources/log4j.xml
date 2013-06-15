@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration xmlns:log4j='http://jakarta.apache.org/log4j/'>
+        
+       <appender name="webservice" class="org.apache.log4j.RollingFileAppender">
+                <param name="file" value="c:/log/webservice/webservice.log" />
+                <param name="maxFileSize" value="50MB"/>
+                <param name="maxBackupIndex" value="20"/>
+                <param name="append" value="false"/>
+                <param name="bufferedIO" value="false"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+                </layout>
+        </appender>
+        
+        <appender name="aiengine" class="org.apache.log4j.RollingFileAppender">
+                <param name="file" value="c:/log/aiengine/aiengine.log" />
+                <param name="maxFileSize" value="50MB"/>
+                <param name="maxBackupIndex" value="20"/>
+                <param name="append" value="false"/>
+                <param name="bufferedIO" value="false"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+                </layout>
+        </appender>
+        
+        <appender name="data" class="org.apache.log4j.RollingFileAppender">
+                <param name="file" value="c:/log/data/data.log" />
+                <param name="maxFileSize" value="50MB"/>
+                <param name="maxBackupIndex" value="20"/>
+                <param name="append" value="false"/>
+                <param name="bufferedIO" value="false"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+                </layout>
+        </appender>   
+        
+        <appender name="default" class="org.apache.log4j.RollingFileAppender">
+                <param name="file" value="c:/log/default.log" />
+                <param name="MaxFileSize" value="50MB"/>
+                <param name="maxBackupIndex" value="100"/>
+                <param name="append" value="false"/>
+                <param name="bufferedIO" value="false"/>
+                <layout class="org.apache.log4j.PatternLayout">
+                        <param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+                </layout>
+        </appender>
+        
+        <!-- Log para webservice  -->
+        <logger name="org.squadra.atenea.ateneaws" >
+                <level value="debug" />
+                <appender-ref ref="webservice" />                
+        </logger>
+
+        <logger name="org.apache.cxf" >
+                <level value="debug" />
+                <appender-ref ref="webservice" />
+        </logger>
+
+        <logger name="org.eclipse.jetty" >
+                <level value="debug" />
+                <appender-ref ref="webservice" />
+        </logger>        
+
+        <!-- Log para datos  -->       
+ 		<logger name="org.squadra.atenea.data" >
+                <level value="debug" />
+                <appender-ref ref="data" />
+        </logger>
+        
+        <!-- Log para IA  -->        
+        <logger name="org.squadra.atenea.aiengine" >
+                <level value="debug" />
+                <appender-ref ref="aiengine" />
+        </logger>
+        
+        <logger name="org.squadra.atenea.aiengineaccess">
+                <level value="debug" />
+                <appender-ref ref="aiengine" />
+        </logger>
+        
+        <root>
+                <level value="debug" />
+	            <appender-ref ref="default" />
+
+        </root>
+</log4j:configuration>
