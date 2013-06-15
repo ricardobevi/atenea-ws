@@ -7,7 +7,7 @@
 	
 	<context-param>
 		<param-name>ContextConfigLocation</param-name>
-		<param-value>WEB-INF/config.xml</param-value>
+		<param-value>WEB-INF/applicationContext.xml</param-value>
 	
 	</context-param>
 
@@ -16,6 +16,8 @@
 			org.springframework.web.context.ContextLoaderListener
 		</listener-class>
 	</listener>
+	
+
 	
 	<servlet>
 		<servlet-name>cxf</servlet-name>
