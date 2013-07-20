@@ -3,6 +3,8 @@ package org.squadra.atenea.ateneaws;
 import javax.jws.WebParam;
 import javax.jws.WebService;
 
+import org.squadra.atenea.aiengine.Message;
+
 /**
  * Esta clase es el webservice que expone los metodos que se utilizan desde 
  * AteneaClient
@@ -13,10 +15,13 @@ import javax.jws.WebService;
 public interface AteneaWs {
 
 	/**
-	 * Metodo que permite dialogar con el servidor atenea
-	 * @param message es el mensaje mediante el cual se desea dialogar con atenea
-	 * @return respuesta devuelta por atenea 
+	 * Metodo que permite dialogar con el servidor Atenea
+	 * @param message es el mensaje que va a enviar el cliente al servidor
+	 * @return mensaje de respuesta del servidor al cliente
 	 * @author tempuses
 	 */
-	String dialog( @WebParam(name="message")  String message );
+	
+	String dialogString( @WebParam(name="message")  String message );
+	
+	Message dialog( @WebParam(name="message")  Message message );
 }

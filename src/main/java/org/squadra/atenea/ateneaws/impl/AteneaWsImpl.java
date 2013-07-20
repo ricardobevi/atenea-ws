@@ -1,9 +1,11 @@
 package org.squadra.atenea.ateneaws.impl;
 
+import javax.jws.WebParam;
 import javax.jws.WebService;
 
-import org.squadra.atenea.ateneaws.AteneaWs;
+import org.squadra.atenea.aiengine.Message;
 import org.squadra.atenea.aiengineaccess.AIEngineAccessFacade;
+import org.squadra.atenea.ateneaws.AteneaWs;
 
 
 /**
@@ -23,17 +25,14 @@ public class AteneaWsImpl implements AteneaWs {
 	}
 
 	@Override
-	public String dialog(String message) {
-		
-		if ( message != null ){
-			return server.excecute(message);
-		} 
-		else{
-			
-			// aca puedo generar un random entre n respuestas o levantarlas de un archivo, eso seria mejor
-			return "No te escuche ¿Cómo dijiste?";
-		}
-		
+	public Message dialog(Message message) {
+		//validar q el mensaje no sea nulo
+		return server.execute(message);
+	}
+	
+	@Override
+	public String dialogString(@WebParam(name = "message") String message) {
+		return "pepe";
 	}
 
 }
