@@ -14,7 +14,7 @@
 	</appender>
 
 	<appender name="file" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/logger.log" />
+		<param name="file" value="/logs/log.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="false" />
@@ -22,11 +22,11 @@
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
 		</layout>
-
 	</appender>
+
 	
-		<appender name="fileWsAtenea" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/loggerWsAtenea.log" />
+	<appender name="WsAteneaFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/logs/WsAtenea/logWsAtenea.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="false" />
@@ -34,19 +34,83 @@
 		<layout class="org.apache.log4j.PatternLayout">
 			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
 		</layout>
-
 	</appender>
 	
+	<appender name="AiEngineFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/logs/AiEngine/logAiEngine.log" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="append" value="false" />
+		<param name="bufferedIO" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="AiEngineAccessFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/logs/AiEngineAccess/logAiEngineAccess.log" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="append" value="false" />
+		<param name="bufferedIO" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="DataLoaderFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/logs/DataLoader/logDataLoader.log" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="append" value="false" />
+		<param name="bufferedIO" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+		</layout>
+	</appender>
+	
+	<appender name="DataAccessFile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="/logs/DataAccess/logDataAccess.log" />
+		<param name="MaxFileSize" value="5MB" />
+		<param name="MaxBackupIndex" value="10" />
+		<param name="append" value="false" />
+		<param name="bufferedIO" value="false" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
+		</layout>
+	</appender>
+
 
 	<logger name="org.squadra.atenea.ateneaws">
 		<level value="debug" />
-		<appender-ref ref="fileWsAtenea" />
+		<appender-ref ref="WsAteneaFile" />
 	</logger>
+
+	<logger name="org.squadra.atenea.aiengine">
+		<level value="debug" />
+		<appender-ref ref="AiEngineFile" />
+	</logger>
+
+
+	<logger name="org.squadra.atenea.aiengineaccess">
+		<level value="debug" />
+		<appender-ref ref="AiEngineAccessFile" />
+	</logger>
+
+	<logger name="org.squadra.atenea.dataloader">
+		<level value="debug" />
+		<appender-ref ref="DataLoaderFile" />
+	</logger>
+	
+	<logger name="org.squadra.atenea.data">
+		<level value="debug" />
+		<appender-ref ref="DataAccessFile" />
+	</logger>	
 
 	<root>
 		<priority value="debug" />
 		<appender-ref ref="console" />
-		<appender-ref ref="file" />
+		<appender-ref ref="defualtfile" />
 	</root>
 
 </log4j:configuration>
