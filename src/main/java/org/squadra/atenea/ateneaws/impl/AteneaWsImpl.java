@@ -37,7 +37,7 @@ public class AteneaWsImpl implements AteneaWs {
 	@Override
 	public String dialogString(@WebParam(name = "message") String message) {
 		log.debug("------------log AteneaWs");
-		return "pepe";
+		return server.execute(message);
 	}
 
 }
