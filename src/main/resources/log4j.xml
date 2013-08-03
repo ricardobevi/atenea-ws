@@ -13,8 +13,8 @@
 		</layout>
 	</appender>
 
-	<appender name="file" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/log.log" />
+	<appender name="defualtfile" class="org.apache.log4j.RollingFileAppender">
+		<param name="file" value="C:/Desarrollo/log/defaultFile.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -26,7 +26,7 @@
 
 	
 	<appender name="WsAteneaFile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/WsAtenea/logWsAtenea.log" />
+		<param name="file" value="C:/Desarrollo/log/WsAtenea/logWsAtenea.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -37,7 +37,7 @@
 	</appender>
 	
 	<appender name="AiEngineFile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/AiEngine/logAiEngine.log" />
+		<param name="file" value="C:/Desarrollo/log/AiEngine/logAiEngine.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -48,7 +48,7 @@
 	</appender>
 	
 	<appender name="AiEngineAccessFile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/AiEngineAccess/logAiEngineAccess.log" />
+		<param name="file" value="C:/Desarrollo/log/AiEngineAccess/logAiEngineAccess.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -59,7 +59,7 @@
 	</appender>
 
 	<appender name="DataLoaderFile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/DataLoader/logDataLoader.log" />
+		<param name="file" value="C:/Desarrollo/log/DataLoader/logDataLoader.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -70,7 +70,7 @@
 	</appender>
 	
 	<appender name="DataAccessFile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/DataAccess/logDataAccess.log" />
+		<param name="file" value="C:/Desarrollo/log/DataAccess/logDataAccess.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -81,7 +81,7 @@
 	</appender>
 	
 	<appender name="otherfile" class="org.apache.log4j.RollingFileAppender">
-		<param name="file" value="/logs/otherfile.log" />
+		<param name="file" value="C:/Desarrollo/log/otherfile.log" />
 		<param name="MaxFileSize" value="5MB" />
 		<param name="MaxBackupIndex" value="10" />
 		<param name="append" value="true" />
@@ -90,9 +90,6 @@
 			<param name="ConversionPattern" value="%d [%-5p] [%-35.35t] %m%n" />
 		</layout>
 	</appender>
-
-
-
 
 	<logger name="org.squadra.atenea.ateneaws">
 		<level value="debug" />
@@ -128,7 +125,6 @@
 	<root>
 		<priority value="debug" />
 		<appender-ref ref="console" />
-		<appender-ref ref="defualtfile" />
 		<appender-ref ref="otherfile" />
 	</root>
 
