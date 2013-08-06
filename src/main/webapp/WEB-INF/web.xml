@@ -7,7 +7,7 @@
 	
 	<context-param>
 		<param-name>ContextConfigLocation</param-name>
-		<param-value>WEB-INF/applicationContext.xml</param-value>
+		<param-value>WEB-INF/*Context.xml</param-value>
 	
 	</context-param>
 
@@ -22,8 +22,6 @@
             org.springframework.web.util.Log4jConfigListener
         </listener-class>
     </listener>
-	
-
 	
 	<servlet>
 		<servlet-name>cxf</servlet-name>
