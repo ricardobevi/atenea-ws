@@ -147,7 +147,7 @@
 
 	<logger name="org.apache.cxf">
 		<level value="debug" />
-		<appender-ref ref="cxf" />
+		<appender-ref ref="cxfAteneaFile" />
 		<appender-ref ref="defualtfile" />
 	</logger>
 
