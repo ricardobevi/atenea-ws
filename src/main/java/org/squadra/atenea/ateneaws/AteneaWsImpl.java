@@ -8,6 +8,8 @@ import lombok.extern.log4j.Log4j;
 import org.squadra.atenea.aiengineaccess.AIEngineAccessFacade;
 import org.squadra.atenea.ateneacommunication.AteneaWs;
 import org.squadra.atenea.ateneacommunication.Message;
+import org.squadra.atenea.base.ResourcesActions;
+import org.squadra.atenea.base.actions.ListOfAction;
 
 
 /**
@@ -25,6 +27,7 @@ public class AteneaWsImpl implements AteneaWs {
 	
 	public AteneaWsImpl(){
 		this.server = new AIEngineAccessFacade();
+		ResourcesActions.buildPaths();
 	}
 
 	@Override
